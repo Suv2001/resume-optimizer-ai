@@ -61,10 +61,14 @@ jobs:
         node-version: '18'
         cache: 'npm'
         
+    - name: Clean node_modules and lock file
+      run: |
+        rm -rf node_modules
+        rm -f package-lock.json
+
     - name: Install and build frontend
       run: |
-        rm -f package-lock.json
-        npm install --no-audit --no-fund --no-optional
+        npm install --omit=optional --no-audit --no-fund
         npm run build --no-audit
     
     - name: Run tests
