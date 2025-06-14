@@ -54,11 +54,18 @@ jobs:
 
     - name: Run migrations
       run: php artisan migrate --force
-
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
     - name: Install and build frontend
       run: |
-        npm install
-        npm run build
+        rm -f package-lock.json
+        npm install --no-audit --no-fund --no-optional
+        npm run build --no-audit
     
     - name: Run tests
       run: php artisan test
