@@ -1,24 +1,76 @@
 <x-guest-layout>
-    <div class="min-h-screen flex items-center justify-center bg-gradient-to-bl from-pink-100 via-blue-100 to-purple-100 py-12 px-4 sm:px-6 lg:px-8 animate-gradient-x">
-        <div class="max-w-md w-full">
-            <!-- Card Container with Glass Effect -->
-            <div class="backdrop-blur-lg bg-white/80 rounded-3xl shadow-2xl p-8 space-y-8 transform hover:scale-[1.01] transition-all duration-300">
-                <!-- Header -->
-                <div class="text-center space-y-6">
-                    <div class="relative mx-auto h-20 w-20">
-                        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl transform rotate-6 transition-transform group-hover:rotate-12"></div>
-                        <div class="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-500 rounded-2xl transform -rotate-3 transition-transform group-hover:-rotate-6"></div>
-                        <div class="relative bg-white rounded-2xl h-full w-full flex items-center justify-center shadow-lg">
-                            <svg class="h-10 w-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left Panel - Decorative Section -->
+        <div class="hidden md:flex md:w-1/2 bg-gradient-to-br from-indigo-600 via-blue-700 to-purple-800 p-12 relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-10"></div>
+            <div class="relative z-10 flex flex-col justify-center h-full text-white space-y-8">
+                <div class="animate-float">
+                    <svg class="w-24 h-24 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-5xl font-bold tracking-tight">Forgot Password?</h1>
+                <p class="text-xl text-white/80 max-w-md">Don't worry, it happens to the best of us. Enter your email and we'll send you a reset link.</p>
+                
+                <!-- Additional Info -->
+                <div class="mt-12 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
-                        </div>
+                        </span>
+                        <span class="text-lg text-white/90">Check your inbox for the reset link</span>
                     </div>
-                    <div>
-                        <h2 class="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-purple-600">Reset Password</h2>
-                        <p class="mt-3 text-gray-500 max-w-sm mx-auto">Enter your email address and we'll send you a link to reset your password.</p>
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </span>
+                        <span class="text-lg text-white/90">Create a strong new password</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </span>
+                        <span class="text-lg text-white/90">Securely access your account</span>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Abstract Shapes -->
+            <div class="absolute bottom-0 right-0 transform translate-y-1/4 translate-x-1/3">
+                <div class="w-64 h-64 rounded-full bg-gradient-to-tr from-blue-400 to-indigo-300 opacity-20 blur-2xl"></div>
+            </div>
+            <div class="absolute top-32 -right-16">
+                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-purple-500 to-pink-400 opacity-20 blur-xl"></div>
+            </div>
+        </div>
+        
+        <!-- Right Panel - Forgot Password Form -->
+        <div class="w-full md:w-1/2 flex items-center justify-center px-6 py-12 md:px-16 lg:px-24 bg-white dark:bg-gray-900">
+            <div class="w-full max-w-md space-y-6">
+                <!-- Logo for Mobile -->
+                <div class="md:hidden flex flex-col items-center space-y-4 mb-8">
+                    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-3 rounded-xl shadow-lg">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Password Recovery</h2>
+                </div>
+                
+                <!-- Header -->
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">Forgot your password?</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Enter your email and we'll send you a reset link</p>
+                </div>
+                
+                <!-- Session Status -->
+                <x-auth-session-status class="mb-4" :status="session('status')" />
 
                 <!-- Session Status -->
                 <x-auth-session-status class="mb-4" :status="session('status')" />
