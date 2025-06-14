@@ -54,6 +54,13 @@ jobs:
 
     - name: Run migrations
       run: php artisan migrate --force
+
+    - name: Create empty frontend assets for testing
+      run: |
+        mkdir -p public/build/assets
+        echo "/* Test CSS */" > public/build/assets/app.css
+        echo "/* Test JS */" > public/build/assets/app.js
+        echo '{"resources/css/app.css":{"file":"assets/app.css","isEntry":true},"resources/js/app.js":{"file":"assets/app.js","isEntry":true}}' > public/build/manifest.json
     
     - name: Run tests
       run: php artisan test
