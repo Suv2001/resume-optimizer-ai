@@ -12,7 +12,25 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @if(app()->environment('testing'))
+            <!-- Skip Vite in testing environment -->
+            <style>
+                .font-sans { font-family: ui-sans-serif, system-ui, sans-serif; }
+                .antialiased { -webkit-font-smoothing: antialiased; }
+                .min-h-screen { min-height: 100vh; }
+                .bg-gray-100 { background-color: rgb(243 244 246); }
+                .bg-white { background-color: rgb(255 255 255); }
+                .shadow { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); }
+                .max-w-7xl { max-width: 80rem; }
+                .mx-auto { margin-left: auto; margin-right: auto; }
+                .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+                .px-4 { padding-left: 1rem; padding-right: 1rem; }
+                .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+                .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+            </style>
+        @else
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @endif
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

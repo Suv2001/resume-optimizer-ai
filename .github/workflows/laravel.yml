@@ -57,12 +57,10 @@ jobs:
     - name: Run migrations
       run: php artisan migrate --force
 
-    - name: Create empty frontend assets for testing
+    - name: Disable Vite for testing
       run: |
-        mkdir -p public/build/assets
-        echo "/* Test CSS */" > public/build/assets/app.css
-        echo "/* Test JS */" > public/build/assets/app.js
-        echo '{"resources/css/app.css":{"file":"assets/app.css","isEntry":true},"resources/js/app.js":{"file":"assets/app.js","isEntry":true}}' > public/build/manifest.json
+        echo "VITE_ENABLED=false" >> .env
+        echo "APP_ENV=testing" >> .env
 
     - name: Run tests with debug output
       run: php artisan test --stop-on-failure
@@ -72,7 +70,7 @@ jobs:
       run: |
         echo "=== Laravel Error Logs ==="
         if [ -f storage/logs/laravel.log ]; then
-          tail -50 storage/logs/laravel.log
+          tail -100 storage/logs/laravel.log
         else
           echo "No Laravel log file found"
         fi
