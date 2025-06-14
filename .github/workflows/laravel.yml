@@ -3,10 +3,22 @@ name: Laravel CI
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  build:
+  laravel-tests:
     runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: testing
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
     - name: Checkout code
@@ -16,10 +28,11 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
-        extensions: mbstring, pdo, xml, bcmath
+        extensions: mbstring, dom, fileinfo, pdo, pdo_mysql, xml, bcmath
+        coverage: none
 
     - name: Install dependencies
-      run: composer install --no-progress
+      run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
     - name: Copy .env
       run: cp .env.example .env
@@ -27,5 +40,25 @@ jobs:
     - name: Generate app key
       run: php artisan key:generate
 
+    - name: Directory permissions
+      run: chmod -R 777 storage bootstrap/cache
+
+    - name: Set up testing database
+      run: |
+        echo "DB_CONNECTION=mysql" >> .env
+        echo "DB_HOST=127.0.0.1" >> .env
+        echo "DB_PORT=3306" >> .env
+        echo "DB_DATABASE=testing" >> .env
+        echo "DB_USERNAME=root" >> .env
+        echo "DB_PASSWORD=password" >> .env
+
+    - name: Run migrations
+      run: php artisan migrate --force
+
+    - name: Install and build frontend
+      run: |
+        npm install
+        npm run build
+    
     - name: Run tests
       run: php artisan test
