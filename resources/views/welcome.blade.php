@@ -254,16 +254,36 @@
                 
                 <div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
                     <div class="col-span-1 flex justify-center items-center">
-                        <img class="h-12 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+                        <div class="h-14 w-36 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700 hover:border-indigo-500 transition-all text-gray-300 hover:text-indigo-400">
+                            <svg class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2a9.964 9.964 0 017.224 3.084l-3.951 3.951A4.984 4.984 0 0012 7c-2.762 0-5 2.238-5 5s2.238 5 5 5 5-2.238 5-5c0-.738-.166-1.437-.458-2.065l3.957-3.957A9.962 9.962 0 0122 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
+                            </svg>
+                            <span class="font-bold">Tuple</span>
+                        </div>
                     </div>
                     <div class="col-span-1 flex justify-center items-center">
-                        <img class="h-12 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
+                        <div class="h-14 w-36 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700 hover:border-indigo-500 transition-all text-gray-300 hover:text-indigo-400">
+                            <svg class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 6H4V4h16v2zm0 4H4v-2h16v2zm0 4H4v-2h16v2zm0 4H4v-2h16v2z"/>
+                            </svg>
+                            <span class="font-bold">Mirage</span>
+                        </div>
                     </div>
                     <div class="col-span-1 flex justify-center items-center">
-                        <img class="h-12 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+                        <div class="h-14 w-36 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700 hover:border-indigo-500 transition-all text-gray-300 hover:text-indigo-400">
+                            <svg class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            <span class="font-bold">StaticKit</span>
+                        </div>
                     </div>
                     <div class="col-span-1 flex justify-center items-center">
-                        <img class="h-12 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Transistor">
+                        <div class="h-14 w-36 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700 hover:border-indigo-500 transition-all text-gray-300 hover:text-indigo-400">
+                            <svg class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 18.178l-4.62-1.256-.328-3.544h2.27l.158 1.787 2.52.687 2.52-.687.26-2.75H7.96l-.635-6.678h9.35l-.212 2.24H9.5l.212 2.24h6.32l-.69 7.03L12 18.178z"/>
+                            </svg>
+                            <span class="font-bold">Transistor</span>
+                        </div>
                     </div>
                 </div>
             </div>
